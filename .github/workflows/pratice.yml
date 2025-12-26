@@ -1,11 +1,20 @@
-name: print hello world
-on: push
+name: Testing secrets and variables
+
+on:
+  workflow_dispatch:
+
 jobs:
-   printing:
-       runs-on: ubuntu-latest
-       steps:
-        - run: |
-            echo " hello world"
-             
-              
-                
+  run-on-ubuntu:
+    runs-on: ubuntu-latest
+
+    # 🔑 THIS IS MANDATORY
+    environment: dev
+
+    steps:
+      - name: Testing secrets
+        env:
+          USERNAME: ${{ vars.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          echo "Your username is $USERNAME"
+          echo "Your password is $PASSWORD"
