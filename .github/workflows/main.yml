@@ -1,23 +1,20 @@
 name: Testing secrets and variables
 
-on: 
+on:
   workflow_dispatch:
 
 jobs:
   run-on-ubuntu:
     runs-on: ubuntu-latest
+
+    # 🔑 THIS IS MANDATORY
     environment: dev
+
     steps:
       - name: Testing secrets
         env:
           USERNAME: ${{ vars.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          echo "Your username is ${{env.USERNAME}}"
-          echo "Your password is ${{env.PASSWORD}}"
-          
-        
-    
-
-      
-   
+          echo "Your username is $USERNAME"
+          echo "Your password is $PASSWORD"
