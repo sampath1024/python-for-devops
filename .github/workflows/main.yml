@@ -6,7 +6,7 @@ on:
 jobs:
   run-on-ubuntu:
     runs-on: ubuntu-latest
-
+    environment: dev
     steps:
       - name: Testing secrets
         env:
