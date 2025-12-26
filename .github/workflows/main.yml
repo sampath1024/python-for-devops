@@ -9,12 +9,14 @@ jobs:
 
     steps:
       - name: Testing secrets
-        run: |
-          echo "Your username is $USERNAME"
-          echo "Your password is $PASSWORD"
         env:
           USERNAME: ${{ vars.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          echo "Your username is $USERNAME"
+          echo "Your password is $PASSWORD"
+        
+    
 
       
    
