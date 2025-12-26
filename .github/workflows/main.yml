@@ -13,8 +13,9 @@ jobs:
           USERNAME: ${{ vars.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          echo "Your username is $USERNAME"
-          echo "Your password is $PASSWORD"
+          echo "Your username is ${{env.USERNAME}}"
+          echo "Your password is ${{env.PASSWORD}}"
+          
         
     
 
