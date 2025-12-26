@@ -1,7 +1,7 @@
 name: Testing secrets and variables
 
-on:
-  push:
+on: 
+  workflow_dispatch:
 
 jobs:
   run-on-ubuntu:
