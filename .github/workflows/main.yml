@@ -13,7 +13,7 @@ jobs:
           echo "Your username is $USERNAME"
           echo "Your password is $PASSWORD"
         env:
-          USERNAME: ${{ secrets.USERNAME }}
+          USERNAME: ${{ vars.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
 
       
