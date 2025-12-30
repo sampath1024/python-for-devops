@@ -25,4 +25,4 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
           python --version
-          python construct.py fix
+          python 02-main-construct.py 
