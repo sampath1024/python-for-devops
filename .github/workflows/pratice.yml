@@ -11,13 +11,18 @@ jobs:
     environment: dev
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       - name: Testing secrets
         env:
           USERNAME: ${{ vars.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
-            
-      
         run: |
-         - uses: actions/check-out@v4
           python --version
-          python construct.py
+          python construct.py fix
