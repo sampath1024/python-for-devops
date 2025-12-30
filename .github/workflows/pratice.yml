@@ -15,6 +15,9 @@ jobs:
         env:
           USERNAME: ${{ vars.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
+            
+      
         run: |
-          echo "Your username is $USERNAME"
-          echo "Your password is $PASSWORD"
+         - uses: actions/check-out@v4
+          python --version
+          python construct.py
